@@ -7,6 +7,6 @@ public class Main {
                 "esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt " +
                 "in culpa qui officia deserunt mollit anim id est laborum.";
         WordsChecker wordsChecker = new WordsChecker(mytext);
-        System.out.println(wordsChecker.hasWord("pariatur"));
+        System.out.println(wordsChecker.hasWord("lorem"));
     }
 }

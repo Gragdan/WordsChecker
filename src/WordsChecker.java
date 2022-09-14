@@ -1,16 +1,15 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 public class WordsChecker {
     private String text;
 
-    private Map<String, Integer> words = new HashMap<>();
+    private HashSet<String> words = new HashSet<String>();
 
     public <text> WordsChecker(String text) {
         this.text = text;
         String[] arrWords = text.split("\\P{IsAlphabetic}+");
-        for (int i = 0; i < arrWords.length; i++) {
-            words.put(arrWords[i].toLowerCase(), i);
+        for (String w : arrWords) {
+            words.add(w.toLowerCase());
         }
     }
 
@@ -25,7 +24,7 @@ public class WordsChecker {
     }
 
     public boolean hasWord(String word) {
-        if (words.get(word.toLowerCase()) != null) {
+        if (words.contains(word.toLowerCase())) {
             return true;
         } else {
             return false;
